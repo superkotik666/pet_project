@@ -4,7 +4,16 @@
 
 @section('content')
 
+    @foreach($posts as $post)
     @include('partials.header')
-WELCOME DARLING
+<div>
+    <img src="/storage/app/public/posts/{{$post->thumbnail}}">
+</div>
+
+    WELCOME DARLING
+        <h2>{{$post->title}}</h2>
+        <h3>{{$post->description}}</h3>
+
+    @endforeach
 @endsection
 
