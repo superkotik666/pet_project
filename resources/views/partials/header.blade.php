@@ -1,7 +1,15 @@
 <div>
 
     <a href="{{ route("home") }}"> На главную </a><br>
-    <a href="{{ route("login") }}" >Войти</a>
+
+        @auth("web")
+            <a href="{{ route("logout") }}" >Выйти</a>
+        @endauth
+
+        @guest("web")
+            <a href="{{ route("login") }}" >Войти</a>
+        @endguest
+
 
 
 </div>

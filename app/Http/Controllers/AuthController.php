@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Post;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -28,7 +29,7 @@ class AuthController extends Controller
         ]);
 
         if(auth("web")->attempt($data)) {
-            return view("posts.index");
+            return view("page");
         }
 
         return redirect(route("login"))->withErrors(["email" => "Пользователь не найден, либо данные введены не правильно"]);
@@ -62,6 +63,10 @@ class AuthController extends Controller
         auth("web")->logout();
 
         return redirect(route("home"));
+    }
+    public function notauth()
+    {
+        return view('auth.notauth');
     }
 
 }
