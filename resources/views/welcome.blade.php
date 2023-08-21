@@ -7,7 +7,7 @@
     @foreach($posts as $post)
     @include('partials.header')
 <div>
-    <img src="/storage/app/public/posts/{{$post->thumbnail}}">
+    <img src="/storage/posts/{{$post->thumbnail}}">
 </div>
 
     WELCOME DARLING
