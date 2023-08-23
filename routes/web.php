@@ -26,8 +26,18 @@ Route::post('/register_process', [\App\Http\Controllers\AuthController::class, '
 Route::middleware(['authorized'])->group(function () {
     Route::get('/your_page', [\App\Http\Controllers\PageController::class, 'showPage'])->name('page');
     Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index'])->name('posts.index');
+
+    Route::get('/messages', [\App\Http\Controllers\MessageController::class, 'index']);
+    Route::get('/messages/create', [\App\Http\Controllers\MessageController::class, 'create']);
+    Route::post('/messages/send', [\App\Http\Controllers\MessageController::class, 'send'])->name('messages.send');
+
 });
 Route::get('/logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 
 Route::get('/not_auth', [\App\Http\Controllers\AuthController::class, 'notauth'])->name('notauth');
+
+
+
+
+
 
