@@ -31,6 +31,9 @@ Route::middleware(['authorized'])->group(function () {
     Route::get('/messages/create', [\App\Http\Controllers\MessageController::class, 'create']);
     Route::post('/messages/send', [\App\Http\Controllers\MessageController::class, 'send'])->name('messages.send');
 
+    Route::get('/notifications', [NotificationsController::class, 'index'])->name('notifications.index');
+    Route::post('/notifications/mark-as-read/{id}', [NotificationsController::class, 'markAsRead'])->name('notifications.markAsRead');
+
 });
 Route::get('/logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 
