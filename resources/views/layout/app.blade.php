@@ -9,7 +9,9 @@
 </head>
 <body>
 @yield('content')
-
+<li class="nav-item">
+    <a class="nav-link" href="{{ route('notifications.index') }}">Notifications</a>
+</li>
 
 </body>
 </html>
