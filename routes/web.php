@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NotificationsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,9 @@ Route::middleware(['authorized'])->group(function () {
     Route::get('/messages', [\App\Http\Controllers\MessageController::class, 'index']);
     Route::get('/messages/create', [\App\Http\Controllers\MessageController::class, 'create']);
     Route::post('/messages/send', [\App\Http\Controllers\MessageController::class, 'send'])->name('messages.send');
+
+    Route::get('/notifications', [NotificationsController::class, 'index'])->name('notifications.index');
+    Route::post('/notifications/mark-as-read/{id}', [NotificationsController::class, 'markAsRead'])->name('notifications.markAsRead');
 
 });
 Route::get('/logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
