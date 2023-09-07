@@ -4,16 +4,12 @@
 
 @section('content')
     @include('partials.header')
-    @foreach($posts as $post)
 
-        <div>
-            <img src="/storage/posts/{{$post->thumbnail}}">
-        </div>
+    <div>
+        @foreach($posts as $post)
+            @include("posts.partials.item", ["post" => $post])
+        @endforeach
 
-
-        <h2>{{$post->title}}</h2>
-        <h3>{{$post->description}}</h3>
-
-    @endforeach
-    {{$posts->links()}} // пагинация
+        {{ $posts->links() }}
+    </div>
 @endsection

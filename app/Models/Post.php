@@ -16,8 +16,9 @@ class Post extends Model
     "thumbnail",
         ];
 
-public function comments(){
-    $this->hasMany(Comment::class)->orderBy("created_at");
-}
+    public function comments()
+    {
+        return $this->hasMany(Comment::class)->orderBy("created_at");
+    }
 
 }
