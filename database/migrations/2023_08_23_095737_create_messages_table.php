@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('receiver_id');
             $table->text('content');
             $table->timestamps();
-
+            $table->text("thumbnail")->nullable();
             $table->foreign('sender_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('receiver_id')->references('id')->on('users')->onDelete('cascade');
         });
