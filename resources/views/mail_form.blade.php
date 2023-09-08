@@ -9,7 +9,7 @@
         <div>
             <h1>Свяжитесь с нами</h1>
 
-            <form method="POST" action="{{ route("mail_form_process") }}">
+            <form method="POST" action="{{ route("contact_form_process") }}">
                 @csrf
 
                 <input name="email" type="text" @error('email')  @enderror" placeholder="Email" />
