@@ -43,6 +43,8 @@ Route::get('/logout', [\App\Http\Controllers\AuthController::class, 'logout'])->
 
 Route::get('/not_auth', [\App\Http\Controllers\AuthController::class, 'notauth'])->name('notauth');
 
+Route::get('/mail_form', [\App\Http\Controllers\IndexController::class, 'showMailForm'])->name('contacts');
+Route::post('/mail_form_process', [\App\Http\Controllers\IndexController::class, 'SendMailForm'])->name('contact_form_process');
 
 
 
