@@ -17,6 +17,7 @@ class CommentForm extends FormRequest
     {
         return [
             "text" => ["required",  "string" , "min:5"],
+            "user_id" => ["required", "exists:users,id"],
 
         ];
     }
@@ -25,6 +26,7 @@ class CommentForm extends FormRequest
     {
         $this->merge([
             "user_id" => auth("web")->id()
+
         ]);
     }
 }
