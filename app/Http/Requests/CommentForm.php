@@ -21,5 +21,10 @@ class CommentForm extends FormRequest
         ];
     }
 
-
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            "user_id" => auth("web")->id()
+        ]);
+    }
 }
