@@ -13,4 +13,11 @@ class IndexController extends Controller
             "posts" => $posts,
         ]);
     }
+
+    public function showMailForm()
+    {
+        return view("mail_form");
+    }
+
+
 }
