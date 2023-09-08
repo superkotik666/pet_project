@@ -10,7 +10,7 @@
 
 
                 <div>
-                    <img src="/storage/posts/{{ $post->thumbnail }}">
+                    <img src="/storage/posts/{{ $post->thumbnail }}" >
                 </div>
 
                     <h2>{{ $post->title }}</h2>
@@ -23,7 +23,7 @@
 
             <div>
                 <section>
-                    <form method="POST" action="">
+                    <form method="POST" action="{{ route("comment", $post->id) }}">
                         @csrf
 
                         <textarea name="text"  @error('text')  @enderror" placeholder="Ваш комментарий..." spellcheck="false"></textarea>
