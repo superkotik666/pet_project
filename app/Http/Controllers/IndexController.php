@@ -24,6 +24,8 @@ class IndexController extends Controller
 
     public function sendMailForm(MailFormRequest $request){
 
-        Mail::to("mymail@yandex.ru")->send(new MailForm($request->validated())); //валидированные данные ($formData) из формы(текст и имейл) передаются в MailForm
+        Mail::to("mymail@yandex.ru")->send(new MailForm($request->validated())); //валидированные данные ($formData)из формы(текст и имейл) передаются в MailForm
+
+        return redirect(route("contacts"));
     }
 }

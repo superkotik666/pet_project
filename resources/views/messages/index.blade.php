@@ -18,3 +18,9 @@
         </ul>
     </div>
 @endsection
+
+<p>
+<div>
+    <a href="{{ route("sendmes") }}" >Написать сообщения</a>
+</div>
+</p>

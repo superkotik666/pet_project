@@ -21,8 +21,11 @@
                 @error('password')
                 <p class="text-red-500">{{ $message }}</p>
                 @enderror
-
-
+               <p>
+                <div>
+                    <a href="{{ route("forgot") }}" >Забыли пароль?</a>
+                </div>
+                </p>
 
                 <div>
                     <a href="{{ route("register") }}" >Регистрация</a>
