@@ -12,7 +12,11 @@ class AdmPostController extends Controller
      */
     public function index()
     {
-        return view('admin.posts.index');
+        $posts = Post::orderBy("created_at", "DESC")->paginate(3);
+
+        return view("admin.posts.index", [
+            "posts" => $posts,
+        ]);
     }
 
     /**
