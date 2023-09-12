@@ -54,10 +54,16 @@ class AdmPostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(PostFormRequest $request, Post $post)
+    public function update(PostFormRequest $request, $id)
     {
-        $post->update($request->validated());
+        $post = Post::findOrFail($id);
+       $data = $request->validated();
 
+       if($request->has("thumbnail")){
+           $thumbnail=str_replace("public/posts", "", $request->file("thumbnail")->store("public/posts"));
+           $data["thumbnail"]=$thumbnail;
+       }
+           $post->update($data);
         return redirect(route("admin.posts.index"));
     }
 
