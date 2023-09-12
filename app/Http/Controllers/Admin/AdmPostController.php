@@ -54,7 +54,12 @@ class AdmPostController extends Controller
     /**
      * Update the specified resource in storage.
      */
+    public function update(PostFormRequest $request, Post $post)
+    {
+        $post->update($request->validated());
 
+        return redirect(route("admin.posts.index"));
+    }
 
     /**
      * Remove the specified resource from storage.
