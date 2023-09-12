@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Post;
 
 class AdmPostController extends Controller
 {
@@ -35,13 +36,6 @@ class AdmPostController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -64,6 +58,8 @@ class AdmPostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Post::destroy($id);
+
+        return redirect(route('admin.posts.index'));
     }
 }
