@@ -43,6 +43,17 @@ class AdmPostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
+    public function edit(Post $post)
+    {
+        return view("admin.posts.create", [
+            "post" => $post,
+        ]);
+    }
+
+
+    /**
+     * Update the specified resource in storage.
+     */
 
 
     /**
