@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AuthFormRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Post;
@@ -22,13 +23,9 @@ class AuthController extends Controller
         return view("auth.register");
     }
 
-    public function login(Request $request)
+    public function login(AuthFormRequest $request)
     {
-        $data = $request->validate([
-
-            "email" => ["required", "email", "string"],
-            "password" => ["required"]
-        ]);
+        $data = $request->validated(); // Получить проверенные входные данные
 
         if(auth("web")->attempt($data)) {
             return view("page");
