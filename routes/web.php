@@ -21,8 +21,8 @@ Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('
 Route::get('/login', [\App\Http\Controllers\AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login_process', [\App\Http\Controllers\AuthController::class, 'login'])->name('login_process');
 
-Route::get('/register', [\App\Http\Controllers\AuthController::class, 'showRegisterForm'])->name('register');
-Route::post('/register_process', [\App\Http\Controllers\AuthController::class, 'register'])->name('register_process');
+Route::get('/register', [\App\Http\Controllers\RegisterController::class, 'showRegisterForm'])->name('register');
+Route::post('/register_process', [\App\Http\Controllers\RegisterController::class, 'register'])->name('register_process');
 
 Route::middleware(['authorized'])->group(function () {
     Route::get('/your_page', [\App\Http\Controllers\PageController::class, 'showPage'])->name('page');
