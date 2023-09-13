@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AuthFormRequest;
+use App\Http\Requests\RegisterFormRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Post;
@@ -34,13 +35,9 @@ class AuthController extends Controller
         return redirect(route("login"))->withErrors(["email" => "Пользователь не найден, либо данные введены не правильно"]);
     }
 
-    public function register(Request $request)
+    public function register(RegisterFormRequest $request)
     {
-        $data = $request->validate([
-            "name" => ["required", "string"],
-            "email" => ["required", "email", "string", "unique:users,email"],
-            "password" => ["required", "confirmed"]
-        ]);
+        $data = $request->validated();
 
         $user = User::create([
             "name" => $data['name'],
