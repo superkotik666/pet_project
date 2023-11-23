@@ -1,12 +1,11 @@
-WELCOME DARLING
+ГЛАВНАЯ СТРАНИЦА
 
 @extends('layout.app')
 
 @section('title', 'Главная страничка')
 
 @section('content')
-    @include('partials.header')
-ГЛАВНАЯ СТРАНИЦА
+@include('partials.header')
 
 
 @endsection

@@ -37,6 +37,9 @@ Route::middleware(['authorized'])->group(function () {
     Route::post('/posts/comment/{id}', [\App\Http\Controllers\PostController::class, 'makeComment'])->name('comment');
 
 
+    Route::get('/forum', [\App\Http\Controllers\ForumController::class, 'showPage'])->name('forum');
+    Route::post('/forum/send', [\App\Http\Controllers\ForumController::class, 'send'])->name('forum.send');
+
 
 });
 Route::get('/logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
