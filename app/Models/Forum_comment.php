@@ -9,11 +9,13 @@ class Forum_comment extends Model
 {
     protected $fillable= [
         "text",
-       /* "user_id",*/
+        "user_id",
 
     ];
 
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+
 }
