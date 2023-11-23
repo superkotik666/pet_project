@@ -5,34 +5,60 @@
 
 @section('content')
 
-            <h1>Вход</h1>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
 
-            <form method="POST" action="{{ route("login_process") }}" >
-                @csrf
 
-                <input name="email" type="text"  @error('email')  @enderror" placeholder="Email" />
+                <form method="POST" action="{{ route('login_process') }}" class="mt-4">
+                    @csrf
 
-                @error('email')
-                <p>{{ $message }}</p>
-                @enderror
+                    <div class="container" style="margin-top: 200px; width: 1300px; position: relative; right: 320px;">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6">
+                                <div class="border border-primary rounded p-4">
+                                    <h1>Вход</h1>
 
-                <input name="password" type="password"  @error('password')  @enderror placeholder="Пароль" />
+                                    <form method="POST" action="{{ route('login_process') }}" class="mt-4">
+                                        @csrf
 
-                @error('password')
-                <p class="text-red-500">{{ $message }}</p>
-                @enderror
-               <p>
-                <div>
-                    <a href="{{ route("forgot") }}" >Забыли пароль?</a>
-                </div>
-                </p>
+                                        <div class="mb-3">
+                                            <input name="email" type="text" class="form-control @error('email') is-invalid @enderror" placeholder="Email" />
 
-                <div>
-                    <a href="{{ route("register") }}" >Регистрация</a>
-                </div>
+                                            @error('email')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
+                                        </div>
 
-                <button type="submit" >Войти</button>
-            </form>
+                                        <div class="mb-3">
+                                            <input name="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Пароль" />
+
+                                            @error('password')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
+                                        </div>
+
+                                        <p>
+                                        <div>
+                                            <a href="{{ route('forgot') }}">Забыли пароль?</a>
+                                        </div>
+                                        </p>
+
+                                        <div>
+                                            <a href="{{ route('register') }}">Регистрация</a>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary mt-3">Войти</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
         </div>
     </div>
 @endsection

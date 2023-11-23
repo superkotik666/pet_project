@@ -14,11 +14,11 @@ use App\Http\Controllers\NotificationsController;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('home');
 
 
 
-Route::get('/login', [\App\Http\Controllers\AuthController::class, 'showLoginForm'])->name('login');
+
+Route::get('/', [\App\Http\Controllers\AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login_process', [\App\Http\Controllers\AuthController::class, 'login'])->name('login_process');
 
 Route::get('/register', [\App\Http\Controllers\RegisterController::class, 'showRegisterForm'])->name('register');

@@ -1,5 +1,5 @@
 @extends('layout.app')
-
+@include('partials.header')
 @section('content')
     <div class="container">
         <h1>Форум</h1>

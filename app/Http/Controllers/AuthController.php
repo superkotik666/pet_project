@@ -33,7 +33,7 @@ class AuthController extends Controller
     {
         auth("web")->logout();
 
-        return redirect(route("home"));
+        return redirect(route("login"));
     }
     public function notauth()
     {

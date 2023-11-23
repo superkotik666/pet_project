@@ -1,10 +1,10 @@
 @extends('layout.app')
 
 @section('title', 'ЛИЧНЫЙ КАБИНЕТ')
-
+@include('partials.header')
 @section('content')
 
-@include('partials.header')
+
 
 @endsection
 
@@ -17,4 +17,9 @@
 
 <div>
     <a href="{{ route("messages") }}" >Перейти в личные сообщения</a>
+</div>
+
+
+<div>
+    <a href="{{ route("forum") }}" >Перейти к форуму</a>
 </div>
