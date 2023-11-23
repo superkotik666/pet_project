@@ -13,11 +13,9 @@ return new class extends Migration
     {
         Schema::create('forum_comments', function (Blueprint $table) {
             $table->id();
-
             $table->text("text");
             $table->timestamps();
-
-
+            $table->string('user_name');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

@@ -12,10 +12,10 @@
             <button type="submit" class="btn btn-primary">Отправить</button>
         </form>
 
-        <h2>Комментарии:</h2>
-        <ul>
+        <h2>Чат:</h2>
+        <ul class="list-group">
             @foreach ($comments as $comment)
-                <li>{{ $comment->text }}</li>
+                <li class="list-group-item">{{$comment->user->name}} написал: {{ $comment->text }} в {{$comment->created_at->format('H:i d F Y')}}</li>
             @endforeach
         </ul>
     </div>
