@@ -1,6 +1,8 @@
 @extends('layout.app')
 @include('partials.header')
 @section('content')
+    @include('cookie')
+
     <div class="container">
         <h1>Форум</h1>
         <form action="{{ route('forum.send') }}" method="POST">

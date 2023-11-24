@@ -21,7 +21,7 @@ class AuthController extends Controller
         $data = $request->validated(); // Получить проверенные входные данные
 
         if(auth("web")->attempt($data)) {
-            return view("page");
+            return redirect(route("page"));
         }
 
         return redirect(route("login"))->withErrors(["email" => "Пользователь не найден, либо данные введены не правильно"]);

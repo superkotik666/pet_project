@@ -10,12 +10,6 @@ use Illuminate\Support\Facades\Mail;
 
 class IndexController extends Controller
 {
-    public function index (){
-        $posts = Post::query()->orderBy("created_at" , "DESC")->limit(3)->get();
-        return view('welcome', [
-            "posts" => $posts,
-        ]);
-    }
 
     public function showMailForm()
     {

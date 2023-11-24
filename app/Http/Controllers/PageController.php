@@ -18,7 +18,7 @@ class PageController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
 
-        return view('page', compact('messages' , 'users'));
+        return view('page', compact('messages' , 'users' , 'user'));
     }
 
 

@@ -25,11 +25,9 @@ Route::get('/register', [\App\Http\Controllers\RegisterController::class, 'showR
 Route::post('/register_process', [\App\Http\Controllers\RegisterController::class, 'register'])->name('register_process');
 
 Route::middleware(['authorized'])->group(function () {
-    Route::get('/your_page', [\App\Http\Controllers\PageController::class, 'showPage'])->name('page');
+    Route::get('/my_page', [\App\Http\Controllers\PageController::class, 'showPage'])->name('page');
 
 
-    Route::get('/messages', [\App\Http\Controllers\MessageController::class, 'index'])->name('messages');
-    Route::get('/messages/create', [\App\Http\Controllers\MessageController::class, 'create'])->name('sendmes');
     Route::post('/messages/send', [\App\Http\Controllers\MessageController::class, 'send'])->name('messages.send');
 
     Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index'])->name('posts.index');

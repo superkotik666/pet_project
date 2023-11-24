@@ -9,15 +9,17 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     @auth("web")
-                        <a class="nav-link" href="{{ route("logout") }}">Выйти</a>
+                        <a class="nav-link" href="{{ route("page") }}">Мой профиль</a>
                     @endauth
                         <a class="nav-link" href="{{ route("posts.index") }}" >Новости</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="openModalBtn" href="#"> Личные сообщения</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="{{ route("forum") }}" >Форум</a>
+                </li>
+
+                <li class="nav-item" style="right:auto ">
+                    <a class="nav-link" href="{{ route("logout") }}">Выйти</a>
                 </li>
             </ul>
         </div>
