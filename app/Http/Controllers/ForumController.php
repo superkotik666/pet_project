@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Forum_comment;
+use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,14 +12,11 @@ class ForumController extends Controller
     public function showPage()
     {
         $comments = Forum_comment::with('user')->get();
-        return view('forum.forum', compact('comments'));
+        return view('forum.forum', compact('comments' ));
     }
-
-
 
     public function send(Request $request)
     {
-
         $comment = new Forum_comment;
         $comment->text = $request->input('comment');
         $user = Auth::user();

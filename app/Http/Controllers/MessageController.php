@@ -41,6 +41,6 @@ class MessageController extends Controller
             'content' => $request->input('content'),
         ]);
 
-        return redirect('/messages')->with('success', 'Message sent successfully.');
+        return redirect()->back();
     }
 }
