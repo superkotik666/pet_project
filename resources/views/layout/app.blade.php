@@ -16,26 +16,32 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        var openModalBtn = document.getElementById("openModalBtn");
-        var myModal = document.getElementById("myModal");
-        var closeModalBtn = myModal.querySelector('.modal-footer button[data-dismiss="modal"]');
+        let openModalBtn = document.getElementById("openModalBtn");
+        let myModal = document.getElementById("myModal");
+        let closeModalBtn = myModal.querySelector('.modal-footer button[data-dismiss="modal"]');
 
-        openModalBtn.addEventListener("click", function () {
-            // Показываем модальное окно
+
+        let modalState = localStorage.getItem("modalState");
+        if (modalState === "open") {
             myModal.classList.add("show");
             myModal.style.display = "block";
-
-            // Добавляем класс "modal-open" к body
             document.body.classList.add("modal-open");
+        }
+
+        openModalBtn.addEventListener("click", function () {
+            myModal.classList.add("show");
+            myModal.style.display = "block";
+            document.body.classList.add("modal-open");
+
+            localStorage.setItem("modalState", "open");
         });
 
         closeModalBtn.addEventListener("click", function () {
-            // Скрываем модальное окно
+
             myModal.classList.remove("show");
             myModal.style.display = "none";
-
-            // Удаляем класс "modal-open" из body
             document.body.classList.remove("modal-open");
+            localStorage.removeItem("modalState");
         });
     });
 </script>
