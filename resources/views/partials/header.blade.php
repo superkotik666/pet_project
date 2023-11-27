@@ -17,7 +17,6 @@
                     <a class="nav-link" id="openModalBtn" href="#"> Личные сообщения</a>
                     <a class="nav-link" href="{{ route("forum") }}" >Форум</a>
                 </li>
-
                 <li class="nav-item" style="right:auto ">
                     <a class="nav-link" href="{{ route("logout") }}">Выйти</a>
                 </li>
